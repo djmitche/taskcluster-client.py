@@ -56,7 +56,7 @@ class BaseClient(object):
     o.update(_defaultConfig)
     if options:
       o.update(options)
-    log.debug(o)
+    log.debug(dict((k, v) for k,v in o.items() if k != 'credentials'))
 
   def makeHawkExt(self):
     """ Make an 'ext' for Hawk authentication """
